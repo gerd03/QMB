@@ -6,8 +6,8 @@
     <title>QM Builders EMD Dept. Names/ID List</title>
     <style>
         body {
-            font-family: 'Bahnschrift SemiBold Condensed'; font-weight: bold;
-            background-color: #7eb4a4;
+            font-family: 'ITALIC'; font-weight: bold;
+            background-color: #441212;
             color: #333;
             margin: 0;
             padding: 0;
@@ -28,17 +28,17 @@
         .panel {
             width: 30%;
             padding: 20px;
-            background-color: #ffffff;
-            box-shadow: 0 4px 8px rgb(252, 48, 48);
+            background-color: #515959;
+            box-shadow: 0 4px 8px rgb(0, 0, 0);
             border-radius: 10px;
             overflow-y: auto;
-            max-height: 600px;
+            max-height:700px;
         }
 
         .panel h2 {
             text-align: center;
             font-size: 1.5rem;
-            color: #d61515;
+            color: #f5f5f5;
             margin-bottom: 20px;
         }
 
@@ -52,7 +52,7 @@
             padding: 10px;
             background-color: #a5c3c4;
             margin-bottom: 10px;
-            border-left: 4px solid #007bff;
+            border-left: 4px solid #861919;
             border-radius: 5px;
             font-size: 0.9rem;
         }
@@ -68,7 +68,7 @@
         h1 {
             text-align: center;
             font-size: 2.5rem;
-            color: #2c3e50;
+            color: #9c1616;
             margin-bottom: 30px;
         }
 
@@ -92,7 +92,7 @@ button {
     padding: 15px;
     font-size: 1rem;
     color: white;
-    background-color: #007bff;
+    background-color: #851313;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -158,7 +158,7 @@ button {
         <!-- Main Panel -->
         <div class="main-panel">
             <img id="logo" src="logo.png" alt="QM Builders Logo" />
-            <h1>EMD Department Names and ID number List</h1>
+            <h1>TECHNICAL OPERATORS, SPOTTER & DRIVERS</h1>
             <input type="text" id="search-bar" placeholder="Search by name, ID,last name or middle name..." />
             <button onclick="search()">Search</button>
             <div id="results"></div>
@@ -177,31 +177,14 @@ button {
     </footer>
     <script>
        const data = [
-       { id: "001011", lastName: "AYNO", firstName: "MARLON", middleName: "PASIGNASIGNA" },
-    { id: "001892", lastName: "BUTAS", firstName: "JESREL", middleName: "TORRES" },
-    { id: "001084", lastName: "CANILLAS", firstName: "MARK JAY", middleName: "MARTINEZ" },
-    { id: "002456", lastName: "CARDOZA", firstName: "JOHN ERIC", middleName: "TIWAN" },
-    { id: "002143", lastName: "CASAG", firstName: "ESPERIDION", middleName: "ENILOM" },
-    { id: "002044", lastName: "CASAG", firstName: "PAUL", middleName: "CARBAJOSA" },
-    { id: "003720", lastName: "CUNOT", firstName: "GIGIE", middleName: "HANDUCANA" },
-    { id: "004746", lastName: "DAGAT", firstName: "MARK ANTHONY", middleName: "UGBAMEN" },
     { id: "002383", lastName: "FUENTES", firstName: "DIOSCORO", middleName: "O." },
-    { id: "005757", lastName: "FUENTES", firstName: "JAY", middleName: "GICALE" },
     { id: "001095", lastName: "FUENTES", firstName: "DOMINICIANO", middleName: "O." },
     { id: "005729", lastName: "LAJOT", firstName: "JOSE NIÑO", middleName: "TIENES" },
-    { id: "001429", lastName: "LLAGOSO", firstName: "REYMOND", middleName: "CASAG" },
-    { id: "002104", lastName: "LOBINO", firstName: "LOYD", middleName: "CADIMAS" },
     { id: "006405", lastName: "MANUBAG", firstName: "QUIOSHE", middleName: "ESCANDALLO" },
     { id: "001269", lastName: "MARGEN", firstName: "AMIEL", middleName: "LLAGOSO" },
     { id: "005930", lastName: "NEMIL", firstName: "KENT LUNNIE", middleName: "CASTRO" },
-    { id: "002061", lastName: "PALIS", firstName: "RITCHELL", middleName: "LONGCOB" },
     { id: "001708", lastName: "PANERIO", firstName: "FELIX", middleName: "P." },
-    { id: "003403", lastName: "PATLINGRAO", firstName: "MARK", middleName: "MANUBAG" },
-    { id: "003318", lastName: "POLGO", firstName: "AXCEL", middleName: "LARA" },
     { id: "002171", lastName: "RABOR", firstName: "ARNEL", middleName: "GEMPAYAN" },
-    { id: "003636", lastName: "RAGANAS", firstName: "NHEL", middleName: "DINGLASA" },
-    { id: "003003", lastName: "STA ANA", firstName: "RENIEL", middleName: "B." },
-    { id: "004796", lastName: "VELASCO", firstName: "ANGELO", middleName: "JOROLAN" },
     { id: "001011", lastName: "AYNO", firstName: "MARLON", middleName: "PASIGNASIGNA" },
     { id: "001892", lastName: "BUTAS", firstName: "JESREL", middleName: "TORRES" },
     { id: "001084", lastName: "CANILLAS", firstName: "MARK JAY", middleName: "MARTINEZ" },
@@ -209,21 +192,11 @@ button {
     { id: "002143", lastName: "CASAG", firstName: "ESPERIDION", middleName: "ENILOM" },
     { id: "002044", lastName: "CASAG", firstName: "PAUL", middleName: "CARBAJOSA" },
     { id: "003720", lastName: "CUNOT", firstName: "GIGIE", middleName: "HANDUCANA" },
-    { id: "004746", lastName: "DAGAT", firstName: "MARK ANTHONY", middleName: "UGBAMEN" },
-    { id: "002383", lastName: "FUENTES", firstName: "DIOSCORO", middleName: "O." },
     { id: "005757", lastName: "FUENTES", firstName: "JAY", middleName: "GICALE" },
-    { id: "001095", lastName: "FUENTES", firstName: "DOMINICIANO", middleName: "O." },
-    { id: "005729", lastName: "LAJOT", firstName: "JOSE NIÑO", middleName: "TIENES" },
     { id: "001429", lastName: "LLAGOSO", firstName: "REYMOND", middleName: "CASAG" },
     { id: "002104", lastName: "LOBINO", firstName: "LOYD", middleName: "CADIMAS" },
-    { id: "006405", lastName: "MANUBAG", firstName: "QUIOSHE", middleName: "ESCANDALLO" },
-    { id: "001269", lastName: "MARGEN", firstName: "AMIEL", middleName: "LLAGOSO" },
-    { id: "005930", lastName: "NEMIL", firstName: "KENT LUNNIE", middleName: "CASTRO" },
-    { id: "002061", lastName: "PALIS", firstName: "RITCHELL", middleName: "LONGCOB" },
-    { id: "001708", lastName: "PANERIO", firstName: "FELIX", middleName: "P." },
     { id: "003403", lastName: "PATLINGRAO", firstName: "MARK", middleName: "MANUBAG" },
     { id: "003318", lastName: "POLGO", firstName: "AXCEL", middleName: "LARA" },
-    { id: "002171", lastName: "RABOR", firstName: "ARNEL", middleName: "GEMPAYAN" },
     { id: "003636", lastName: "RAGANAS", firstName: "NHEL", middleName: "DINGLASA" },
     { id: "003003", lastName: "STA ANA", firstName: "RENIEL", middleName: "B." },
     { id: "004796", lastName: "VELASCO", firstName: "ANGELO", middleName: "JOROLAN" },
@@ -238,20 +211,17 @@ button {
     { id: "005748", lastName: "ARINAS", firstName: "JONKETH", middleName: "S." },
     { id: "003356", lastName: "CASQUEIO", firstName: "DANREY", middleName: "CARBAJOSA" },
     { id: "003811", lastName: "FORMENTERA", firstName: "ARNOLD", middleName: "COLAJO" },
-    { id: "005153", lastName: "MENCIS", firstName: "RODELIO", middleName: "DICDICAN" },
     { id: "002566", lastName: "NEMIS", firstName: "TEGGIE", middleName: "" },
     { id: "005956", lastName: "OPSAR", firstName: "ARMANDO", middleName: "QUIRANTE" },
     { id: "003870", lastName: "SAGAYNO", firstName: "JOHN MARKIE", middleName: "" },
     { id: "1045", lastName: "ABAD", firstName: "CHRISTOPHER", middleName: "L." },
     { id: "3080", lastName: "ABAD", firstName: "ARNOLD", middleName: "VIVAR" },
     { id: "3453", lastName: "ABAD", firstName: "POLICARPO", middleName: "" },
-    { id: "6465", lastName: "ABAD", firstName: "POSINISO", middleName: "IBESA" },
     { id: "6821", lastName: "ACOSTA", firstName: "ROMEO JR.", middleName: "CATONG" },
     { id: "3050", lastName: "ALEO", firstName: "MICHAEL", middleName: "CARCUEVA" },
     { id: "5584", lastName: "ALLAWAN", firstName: "RONALD", middleName: "OROBETA" },
     { id: "4013", lastName: "ANINON", firstName: "ESMERALDO", middleName: "MIAG-AO" },
     { id: "4008", lastName: "APOG", firstName: "RUEL", middleName: "MOSQUITO" },
-    { id: "5748", lastName: "ARINAS", firstName: "JONKETH", middleName: "S." },
     { id: "1056", lastName: "BAGAYO", firstName: "PEDRO", middleName: "R." },
     { id: "5680", lastName: "BALANSAG", firstName: "MICHAEL", middleName: "CHINTE" },
     { id: "3593", lastName: "BARLISO", firstName: "JOHN", middleName: "MADRID" },
@@ -264,23 +234,18 @@ button {
     { id: "5833", lastName: "BERCERO", firstName: "CANDY", middleName: "PANTALEON" },
     { id: "1069", lastName: "CALAGO", firstName: "BENJE", middleName: "C." },
     { id: "1071", lastName: "CALAGO", firstName: "PEDRO", middleName: "ABAD" },
-    { id: "1073", lastName: "CALAGO", firstName: "MARIANO JR.", middleName: "B." },
     { id: "1074", lastName: "CALAGO", firstName: "FELMAR", middleName: "BAYA" },
     { id: "3360", lastName: "CALMA", firstName: "MARIO", middleName: "CAMBARIJAN" },
     { id: "1075", lastName: "CAMBALON", firstName: "LUMIE", middleName: "TORRES" },
-    { id: "1077", lastName: "CANOY", firstName: "JAIME", middleName: "CATAPUSAN" },
     { id: "1079", lastName: "CANOY", firstName: "JOVANE", middleName: "QUINANOLA" },
     { id: "1081", lastName: "CANOY", firstName: "ROMEL", middleName: "ALPUERTO" },
-    { id: "1082", lastName: "CANOY", firstName: "ROEL", middleName: "QUINANOLA" },
     { id: "1085", lastName: "CANOY", firstName: "JAYMON", middleName: "QUINANOLA" },
     { id: "3328", lastName: "CARAY", firstName: "JUANITO", middleName: "ESPALTERO" },
     { id: "4166", lastName: "CARAY", firstName: "CARLITO", middleName: "CARAEL" },
     { id: "6404", lastName: "CARMELOTES", firstName: "ARMANDO", middleName: "DUMIP-IG" },
     { id: "3223", lastName: "CARREON", firstName: "MARLON", middleName: "DIOLAN" },
-    { id: "5795", lastName: "CASAG", firstName: "DJANDON", middleName: "ABAD" },
     { id: "6452", lastName: "CASAG", firstName: "DAVE LYLE", middleName: "ABAD" },
     { id: "5276", lastName: "COBOL", firstName: "DIONISIO JR.", middleName: "PASIGNASIGNA" },
-    { id: "4746", lastName: "DAGAT", firstName: "MARK ANTHONY", middleName: "UGBAMEN" },
     { id: "5152", lastName: "DAKAY", firstName: "FEDERICO", middleName: "ANGTIAMPO" },
     { id: "4626", lastName: "DAVIS", firstName: "WENDEL", middleName: "LALUNA" },
     { id: "2278", lastName: "DEBIBAR", firstName: "REY", middleName: "LLAGOSO" },
@@ -299,11 +264,9 @@ button {
     { id: "1859", lastName: "PASIGNA", firstName: "CRESENCIO", middleName: "" },
     { id: "3194", lastName: "PASIGNASIGNA", firstName: "MICHAEL", middleName: "CABILEDA" },
     { id: "1713", lastName: "PASINABO", firstName: "ALEX", middleName: "TAO" },
-    { id: "6474", lastName: "PATAC", firstName: "ARIEL", middleName: "TOLEBNTINO" },
     { id: "6684", lastName: "PATAC", firstName: "CARMELITO", middleName: "TOLENTINO" },
     { id: "2111", lastName: "PATLINGRAO", firstName: "RENATO", middleName: "JACULBE" },
     { id: "1626", lastName: "PEPITO", firstName: "ELVIN", middleName: "OMANDAK" },
-    { id: "2688", lastName: "PERATER", firstName: "DANILO", middleName: "OMAYA" },
     { id: "2767", lastName: "PERATER", firstName: "JEFREY", middleName: "CASIPONG" },
     { id: "1391", lastName: "PERMANO", firstName: "FRANCISCO", middleName: "LANOJAN" },
     { id: "1394", lastName: "POLGO", firstName: "REYGAN", middleName: "MARTIN" },
@@ -312,12 +275,10 @@ button {
     { id: "1990", lastName: "REPOSO", firstName: "JUDY", middleName: "DE JESUS" },
     { id: "4164", lastName: "RICABO", firstName: "CHRISTIAN PAUL", middleName: "DEOTICIO" },
     { id: "2361", lastName: "SACAN", firstName: "FELICISIMO", middleName: "APURADO" },
-    { id: "4191", lastName: "SACAN", firstName: "LORENZO", middleName: "DENIEGA" },
     { id: "4401", lastName: "SAMONTANEZ", firstName: "CHRISTOPHER", middleName: "DELICANO" },
     { id: "1401", lastName: "SARDIDO", firstName: "DELFIN", middleName: "ARCALA" },
     { id: "1399", lastName: "SARNO", firstName: "MICHAEL", middleName: "SATOMERA" },
     { id: "5750", lastName: "SIBALA", firstName: "MICHAEL", middleName: "GENTERONE" },
-    { id: "3003", lastName: "STA ANA", firstName: "RENIEL", middleName: "B." },
     { id: "6682", lastName: "STA. ANA", firstName: "JUNREY", middleName: "MANACAP" },
     { id: "3068", lastName: "SUPERALES", firstName: "REYNANTE", middleName: "CARBAJOSA" },
     { id: "4724", lastName: "TACOLOY", firstName: "PABLITO", middleName: "TUANZON" },
@@ -339,7 +300,6 @@ button {
     { id: "6667", lastName: "LAPUSQUE", firstName: "JONATHAN", middleName: "GENTAPA" },
     { id: "1664", lastName: "LAYAN", firstName: "HERMES", middleName: "INDAB" },
     { id: "1705", lastName: "LICO", firstName: "ALBERT", middleName: "DAÑO" },
-    { id: "1429", lastName: "LLAGOSO", firstName: "REYMOND", middleName: "CASAG" },
     { id: "4407", lastName: "MANGYAO", firstName: "JONATHAN", middleName: "C." },
     { id: "5826", lastName: "MARIBAO", firstName: "JAVE", middleName: "GALACE" },
     { id: "2735", lastName: "MARTILLAN", firstName: "JOSE JR.", middleName: "GONZALES" },
@@ -364,96 +324,80 @@ button {
     { id: "1412", lastName: "ZOZOBRADO", firstName: "ULDARICO", middleName: "HERODIAS" },
     { id: "6617", lastName: "SUMAMPONG", firstName: "ELEAZAR", middleName: "ZULUETA" },
     { id: "6197", lastName: "DELICANO", firstName: "NHEL", middleName: "CABALQUINTO" },
-    { id: "1045", lastName: "ABAD", firstName: "CHRISTOPHER L." },
-    { id: "3080", lastName: "ABAD", firstName: "ARNOLD VIVAR" },
-    { id: "3453", lastName: "ABAD", firstName: "POLICARPO" },
-    { id: "6465", lastName: "ABAD", firstName: "POSINISO IBESA" },
-    { id: "6821", lastName: "ACOSTA", firstName: "ROMEO JR. CATONG" },
-    { id: "3050", lastName: "ALEO", firstName: "MICHAEL CARCUEVA" },
-    { id: "5584", lastName: "ALLAWAN", firstName: "RONALD ORBETA" },
-    { id: "4013", lastName: "ANINON", firstName: "ESMERALDO MIAG-AO" },
-    { id: "4008", lastName: "APOG", firstName: "RUEL MOSQUITO" },
-    { id: "5748", lastName: "ARINAS", firstName: "JONKETH S." },
-    { id: "1056", lastName: "BAGAYO", firstName: "PEDRO R." },
-    { id: "5680", lastName: "BALANSAG", firstName: "MICHAEL CHINTE" },
-    { id: "3593", lastName: "BARLISO", firstName: "JOHN MADRID" },
-    { id: "3118", lastName: "BAYABIAN", firstName: "VALENTINO ESCOREAL" },
-    { id: "6520", lastName: "BAYABIAN", firstName: "JEROME TRISTAN ALPUERTO" },
-    { id: "1431", lastName: "BAYARON", firstName: "APOLLO CAPISTRANO" },
-    { id: "4354", lastName: "BAYATON", firstName: "JOHN CARLO BELOCURA" },
-    { id: "3283", lastName: "BAYLOSIS", firstName: "JEREMIAS OGANG" },
-    { id: "6192", lastName: "BENDANILLO", firstName: "GEORGE ILLAGA" },
-    { id: "5833", lastName: "BERCERO", firstName: "CANDY PANTALEON" },
-    { id: "1069", lastName: "CALAGO", firstName: "BENJE C." },
-    { id: "1071", lastName: "CALAGO", firstName: "PEDRO ABAD" },
-    { id: "1073", lastName: "CALAGO", firstName: "MARIANO JR. B." },
-    { id: "1074", lastName: "CALAGO", firstName: "FELMAR BAYA" },
-    { id: "3360", lastName: "CALMA", firstName: "MARIO CAMBARIJAN" },
-    { id: "1075", lastName: "CAMBALON", firstName: "LUMIE TORRES" },
-    { id: "1077", lastName: "CANOY", firstName: "JAIME CATAPUSAN" },
-    { id: "1079", lastName: "CANOY", firstName: "JOVANE QUINANOLA" },
-    { id: "1081", lastName: "CANOY", firstName: "ROMEL ALPUERTO" },
-    { id: "1082", lastName: "CANOY", firstName: "ROEL QUINANOLA" },
-    { id: "1085", lastName: "CANOY", firstName: "JAYMON QUINANOLA" },
-    { id: "3328", lastName: "CARAY", firstName: "JUANITO ESPALTERO" },
-    { id: "4166", lastName: "CARAY", firstName: "CARLITO CARAEL" },
-    { id: "6404", lastName: "CARMELOTES", firstName: "ARMANDO DUMIP-IG" },
-    { id: "3223", lastName: "CARREON", firstName: "MARLON DIOLAN" },
-    { id: "5795", lastName: "CASAG", firstName: "DJANDON ABAD" },
-    { id: "6452", lastName: "CASAG", firstName: "DAVE LYLE ABAD" },
-    { id: "5276", lastName: "COBOL", firstName: "DIONISIO JR. PASIGNASIGNA" },
-    { id: "4746", lastName: "DAGAT", firstName: "MARK ANTHONY UGBAMEN" },
-    { id: "5152", lastName: "DAKAY", firstName: "FEDERICO ANGTIAMPO" },
-    { id: "4626", lastName: "DAVIS", firstName: "WENDEL LALUNA" },
-    { id: "2278", lastName: "DEBIBAR", firstName: "REY LLAGOSO" },
-    { id: "2272", lastName: "DELACERNA", firstName: "VICTORIANO MARTINET" },
-    { id: "6015", lastName: "DELA CRUZ", firstName: "EDITO VILLEGAS" },
-    { id: "5593", lastName: "DINOPOL", firstName: "JESSIE PAE PASIGNASIGNA" },
-    { id: "1425", lastName: "DUPAL-AG", firstName: "DIONISIO JR. ENAO" },
-    { id: "5658", lastName: "ECOY", firstName: "JAYMAR SALDUA" },
-    { id: "1842", lastName: "EMPIALES", firstName: "MILVEN MALTO" },
-    { id: "6642", lastName: "ESCRIBANO", firstName: "JANILO MAQUE" },
-    { id: "3950", lastName: "ESCUADRO", firstName: "RENNAN ASENTISTA" },
-    { id: "6547", lastName: "ESPANTALEON", firstName: "JENO RICAHUERTE" },
-    { id: "3811", lastName: "FORMENTERA", firstName: "ARNOLD COLAJO" },
-    { id: "5954", lastName: "GALABAN", firstName: "ERNESTO TAMONDOC" },
-    { id: "3739", lastName: "GIMALALUD", firstName: "DANILO DEL CORO" },
-    { id: "1859", lastName: "PASIGNA", firstName: "CRESENCIO" },
-    { id: "3194", lastName: "PASIGNASIGNA", firstName: "MICHAEL CABILEDA" },
-    { id: "1713", lastName: "PASINABO", firstName: "ALEX TAO" },
-    { id: "6474", lastName: "PATAC", firstName: "ARIEL TOLEBNTINO" },
-    { id: "6684", lastName: "PATAC", firstName: "CARMELITO TOLENTINO" },
-    { id: "2111", lastName: "PATLINGRAO", firstName: "RENATO JACULBE" },
-    { id: "1626", lastName: "PEPITO", firstName: "ELVIN OMANDAK" },
-    { id: "2688", lastName: "PERATER", firstName: "DANILO OMAYA" },
-    { id: "2767", lastName: "PERATER", firstName: "JEFREY CASIPONG" },
-    { id: "1391", lastName: "PERMANO", firstName: "FRANCISCO LANOJAN" },
-    { id: "1394", lastName: "POLGO", firstName: "REYGAN MARTIN" },
-    { id: "5767", lastName: "REMENTIZO", firstName: "JAPHET ISRAEL SAPANTA" },
-    { id: "1990", lastName: "REPOSO", firstName: "JUDY DE JESUS" },
-    { id: "4164", lastName: "RICABO", firstName: "CHRISTIAN PAUL DEOTICIO" },
-    { id: "2361", lastName: "SACAN", firstName: "FELICISIMO APURADO" },
-    { id: "4191", lastName: "SACAN", firstName: "LORENZO DENIEGA" },
-    { id: "4401", lastName: "SAMONTANEZ", firstName: "CHRISTOPHER DELICANO" },
-    { id: "1401", lastName: "SARDIDO", firstName: "DELFIN ARCALA" },
-    { id: "1399", lastName: "SARNO", firstName: "MICHAEL SATOMERA" },
-    { id: "5750", lastName: "SIBALA", firstName: "MICHAEL GENTERONE" },
-    { id: "3003", lastName: "STA ANA", firstName: "RENIEL B." },
-    { id: "6682", lastName: "STA. ANA", firstName: "JUNREY MANACAP" },
-    { id: "3068", lastName: "SUPERALES", firstName: "REYNANTE CARBAJOSA" },
-    { id: "4724", lastName: "TACOLOY", firstName: "PABLITO TUANZON" },
-    { id: "6718", lastName: "TACULAN", firstName: "ROMEO BUNTISAN" },
-    { id: "3387", lastName: "TADINA", firstName: "CARLOS BALBA" },
-    { id: "3924", lastName: "TADINA", firstName: "DOMINGO ABUL" },
-    { id: "3326", lastName: "TALABA", firstName: "GENARO LOPEZ" },
-    { id: "3220", lastName: "TALON", firstName: "DOMINGO CALBA" },
-    { id: "3273", lastName: "TALON", firstName: "CONRADO PASIGNASIGNA" },
-    { id: "4820", lastName: "TAMANG", firstName: "JUVENAL ACERIA" },
-    { id: "3327", lastName: "TAMAYO", firstName: "PEDRO VILLARTA" },
-    { id: "4624", lastName: "TAN", firstName: "GABRIEL KUCAL" },
-    { id: "3364", lastName: "TOLERICO", firstName: "EUGENIO DELUCENA" },
-    { id: "3329", lastName: "VILLARTA", firstName: "NOEL PASIGNASIGNA" },
-    { id: "6686", lastName: "VILLARTA", firstName: "RYAN ALORES" }
+  { id: "6465", lastName: "ABAD", firstName: "POSINISO", middleName: "IBESA" },
+  { id: "6821", lastName: "ACOSTA", firstName: "ROMEO", middleName: "JR. CATONG" },
+  { id: "3050", lastName: "ALEO", firstName: "MICHAEL", middleName: "CARCUEVA" },
+  { id: "5584", lastName: "ALLAWAN", firstName: "RONALD", middleName: "ORABETA" },
+  { id: "4013", lastName: "ANINON", firstName: "ESMERALDO", middleName: "MIAG-AO" },
+  { id: "4008", lastName: "APOG", firstName: "RUEL", middleName: "MOSQUITO" },
+  { id: "1056", lastName: "BAGAYO", firstName: "PEDRO", middleName: "R." },
+  { id: "5680", lastName: "BALANSAG", firstName: "MICHAEL", middleName: "CHINTE" },
+  { id: "3593", lastName: "BARLISO", firstName: "JOHN", middleName: "MADRID" },
+  { id: "1431", lastName: "BAYARON", firstName: "APOLLO", middleName: "CAPISTRANO" },
+  { id: "4354", lastName: "BAYATON", firstName: "JOHN", middleName: "CARLO BELOCURA" },
+  { id: "3283", lastName: "BAYLOSIS", firstName: "JEREMIAS", middleName: "OGANG" },
+  { id: "6192", lastName: "BENDANILLO", firstName: "GEORGE", middleName: "ILLAGA" },
+  { id: "5833", lastName: "BERCERO", firstName: "CANDY", middleName: "PANTALEON" },
+  { id: "1071", lastName: "CALAGO", firstName: "PEDRO", middleName: "ABAD" },
+  { id: "1073", lastName: "CALAGO", firstName: "MARIANO", middleName: "JR. B." },
+  { id: "3360", lastName: "CALMA", firstName: "MARIO", middleName: "CAMBARIJAN" },
+  { id: "1075", lastName: "CAMBALON", firstName: "LUMIE", middleName: "TORRES" },
+  { id: "1077", lastName: "CANOY", firstName: "JAIME", middleName: "CATAPUSAN" },
+  { id: "1082", lastName: "CANOY", firstName: "ROEL", middleName: "QUINANOLA" },
+  { id: "3328", lastName: "CARAY", firstName: "JUANITO", middleName: "ESPALTERO" },
+  { id: "4166", lastName: "CARAY", firstName: "CARLITO", middleName: "CARAEL" },
+  { id: "6404", lastName: "CARMELOTES", firstName: "ARMANDO", middleName: "DUMIP-IG" },
+  { id: "3223", lastName: "CARREON", firstName: "MARLON", middleName: "DIOLAN" },
+  { id: "5795", lastName: "CASAG", firstName: "DJANDON", middleName: "ABAD" },
+  { id: "5276", lastName: "COBOL", firstName: "DIONISIO", middleName: "JR. PASIGNASIGNA" },
+  { id: "4746", lastName: "DAGAT", firstName: "MARK ANTHONY", middleName: "UGBAMEN" },
+  { id: "5152", lastName: "DAKAY", firstName: "FEDERICO", middleName: "ANGTIAMPO" },
+  { id: "4626", lastName: "DAVIS", firstName: "WENDEL", middleName: "LALUNA" },
+  { id: "2278", lastName: "DEBIBAR", firstName: "REY", middleName: "LLAGOSO" },
+  { id: "2272", lastName: "DELACERNA", firstName: "VICTORIANO", middleName: "MARTINET" },
+  { id: "6015", lastName: "DELA CRUZ", firstName: "EDITO", middleName: "VILLEGAS" },
+  { id: "5593", lastName: "DINOPOL", firstName: "JESSIE", middleName: "PAE PASIGNASIGNA" },
+  { id: "1425", lastName: "DUPAL-AG", firstName: "DIONISIO", middleName: "JR. ENAO" },
+  { id: "5658", lastName: "ECOY", firstName: "JAYMAR", middleName: "SALDUA" },
+  { id: "1842", lastName: "EMPIALES", firstName: "MILVEN", middleName: "MALTO" },
+  { id: "6642", lastName: "ESCRIBANO", firstName: "JANILO", middleName: "MAQUE" },
+  { id: "3950", lastName: "ESCUADRO", firstName: "RENNAN", middleName: "ASENTISTA" },
+  { id: "6547", lastName: "ESPANTALEON", firstName: "JENO", middleName: "RICAHUERTE" },
+  { id: "3811", lastName: "FORMENTERA", firstName: "ARNOLD", middleName: "COLAJO" },
+  { id: "5954", lastName: "GALABAN", firstName: "ERNESTO", middleName: "TAMONDOC" },
+  { id: "3739", lastName: "GIMALALUD", firstName: "DANILO", middleName: "DEL CORO" },
+  { id: "1859", lastName: "PASIGNA", firstName: "CRESENCIO", middleName: "" },
+  { id: "3194", lastName: "PASIGNASIGNA", firstName: "MICHAEL", middleName: "CABILEDA" },
+  { id: "1713", lastName: "PASINABO", firstName: "ALEX", middleName: "TAO" },
+  { id: "6474", lastName: "PATAC", firstName: "ARIEL", middleName: "TOLENTINO" },
+  { id: "2111", lastName: "PATLINGRAO", firstName: "RENATO", middleName: "JACULBE" },
+  { id: "1626", lastName: "PEPITO", firstName: "ELVIN", middleName: "OMANDAK" },
+  { id: "2688", lastName: "PERATER", firstName: "DANILO", middleName: "OMAYA" },
+  { id: "1391", lastName: "PERMANO", firstName: "FRANCISCO", middleName: "LANOJAN" },
+  { id: "1394", lastName: "POLGO", firstName: "REYGAN", middleName: "MARTIN" },
+  { id: "5767", lastName: "REMENTIZO", firstName: "JAPHET", middleName: "ISRAEL SAPANTA" },
+  { id: "1990", lastName: "REPOSO", firstName: "JUDY", middleName: "DE JESUS" },
+  { id: "4164", lastName: "RICABO", firstName: "CHRISTIAN", middleName: "PAUL DEOTICIO" },
+  { id: "4191", lastName: "SACAN", firstName: "LORENZO", middleName: "DENIEGA" },
+  { id: "4401", lastName: "SAMONTANEZ", firstName: "CHRISTOPHER", middleName: "DELICANO" },
+  { id: "1401", lastName: "SARDIDO", firstName: "DELFIN", middleName: "ARCALA" },
+  { id: "1399", lastName: "SARNO", firstName: "MICHAEL", middleName: "SATOMERA" },
+  { id: "5750", lastName: "SIBALA", firstName: "MICHAEL", middleName: "GENTERONE" },
+  { id: "6682", lastName: "STA. ANA", firstName: "JUNREY", middleName: "MANACAP" },
+  { id: "3068", lastName: "SUPERALES", firstName: "REYNANTE", middleName: "CARBAJOSA" },
+  { id: "4724", lastName: "TACOLOY", firstName: "PABLITO", middleName: "TUANZON" },
+  { id: "6718", lastName: "TACULAN", firstName: "ROMEO", middleName: "BUNTISAN" },
+  { id: "3387", lastName: "TADINA", firstName: "CARLOS", middleName: "BALBA" },
+  { id: "3924", lastName: "TADINA", firstName: "DOMINGO", middleName: "ABUL" },
+  { id: "3326", lastName: "TALABA", firstName: "GENARO", middleName: "LOPEZ" },
+  { id: "3220", lastName: "TALON", firstName: "DOMINGO", middleName: "CALBA" },
+  { id: "3273", lastName: "TALON", firstName: "CONRADO", middleName: "PASIGNASIGNA" },
+  { id: "4820", lastName: "TAMANG", firstName: "JUVENAL", middleName: "ACERIA" },
+  { id: "3327", lastName: "TAMAYO", firstName: "PEDRO", middleName: "VILLARTA" },
+  { id: "4624", lastName: "TAN", firstName: "GABRIEL", middleName: "KUCAL" },
+  { id: "3364", lastName: "TOLERICO", firstName: "EUGENIO", middleName: "DELUCENA" },
+  { id: "3329", lastName: "VILLARTA", firstName: "NOEL", middleName: "PASIGNASIGNA" },
+  { id: "6686", lastName: "VILLARTA", firstName: "RYAN", middleName: "ALORES" },
 ];
 
         const searchInput = document.getElementById("search-bar");
