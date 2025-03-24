@@ -6,6 +6,28 @@
     <title>QM Builders EMD Dept. Names/ID List</title>
     <style>
 
+/* Smaller Add Employee Button */
+#add-employee-btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    width: fit-content;
+    display: block;
+    margin: 20px auto;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover Effect */
+#add-employee-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+
         
        body {
     font-family: 'Poppins', sans-serif;
@@ -180,6 +202,73 @@ body {
     background-color: #121212;
     color: white;
 }
+/* Background Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark transparent background */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensures it's on top of everything */
+}
+
+/* Centered Popup Form */
+.popup-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px;
+    z-index: 1001; /* Above the overlay */
+    position: relative;
+}
+
+/* Input Fields */
+.popup-form input {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Form Buttons */
+.popup-form button {
+    width: 100px;
+    margin: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Confirm Button */
+.popup-form button:first-of-type {
+    background-color: #28a745;
+    color: white;
+}
+
+.popup-form button:first-of-type:hover {
+    background-color: #218838;
+}
+
+/* Cancel Button */
+.popup-form button:last-of-type {
+    background-color: #d23a3a;
+    color: white;
+}
+
+.popup-form button:last-of-type:hover {
+    background-color: #b82f2f;
+}
 
 button, .hoverable {
     position: relative;
@@ -263,6 +352,19 @@ button.search:hover .icon {
     </style>
 </head>
 <body>
+    <!-- Overlay and Popup Form -->
+<div class="overlay" id="overlay">
+    <div class="popup-form">
+        <h2>Add New Employee</h2>
+        <input type="text" id="new-id" placeholder="ID Number" required>
+        <input type="text" id="new-first-name" placeholder="First Name" required>
+        <input type="text" id="new-middle-name" placeholder="Middle Name">
+        <input type="text" id="new-last-name" placeholder="Last Name" required>
+        <button onclick="saveEmployee()">Save</button>
+        <button onclick="closeForm()">Cancel</button>
+    </div>
+</div>
+
     <div class="main-container">
         <!-- Left Panel -->
         <div class="panel" id="left-panel">
@@ -271,6 +373,7 @@ button.search:hover .icon {
                 <!-- Names will be dynamically inserted here -->
             </ul>
         </div>
+
 
         <!-- Main Panel -->
         <div class="main-panel">
@@ -292,6 +395,12 @@ button.search:hover .icon {
     <footer>
         © 2025 QM Builders EMD Dept. All rights reserved. Prepared by Alejandro Martinez Jr.
     </footer>
+
+    <!-- Add Employee Button -->
+<button id="add-employee-btn">Add New Employee</button>
+
+
+
     <script>
        const data = [
     { id: "002383", lastName: "FUENTES", firstName: "DIOSCORO", middleName: "O." },
@@ -313,7 +422,7 @@ button.search:hover .icon {
     { id: "001429", lastName: "LLAGOSO", firstName: "REYMOND", middleName: "CASAG" },
     { id: "002104", lastName: "LOBINO", firstName: "LOYD", middleName: "CADIMAS" },
     { id: "003403", lastName: "PATLINGRAO", firstName: "MARK", middleName: "MANUBAG" },
-    { id: "003318", lastName: "POLGO", firstName: "AXCEL", middleName: "LARA" },
+    { id: "3318", lastName: "POLGO", firstName: "AXCEL", middleName: "LARA" },
     { id: "003636", lastName: "RAGANAS", firstName: "NHEL", middleName: "DINGLASA" },
     { id: "003003", lastName: "STA ANA", firstName: "RENIEL", middleName: "B." },
     { id: "004796", lastName: "VELASCO", firstName: "ANGELO", middleName: "JOROLAN" },
@@ -587,9 +696,74 @@ button.search:hover .icon {
   { id: "5574", lastName: "MORALES", firstName: "GLEN", middleName: "" },
   { id: "6203", lastName: "UBAS", firstName: "WELSON", middleName: "" },
   { id: "6475", lastName: "OLAO", firstName: "MARVIN", middleName: "" },
-  { id: "5944", lastName: "ORTILE", firstName: "ALDREN", middleName: "" }
+  { id: "5944", lastName: "ORTILE", firstName: "ALDREN", middleName: "" },
+  { id: "7154", lastName: "MANGKIT", firstName: "JOSEPH", middleName: "B" },
+{ id: "7164", lastName: "TORNANDISO", firstName: "MEREJON", middleName: "" },
+{ id: "1422", lastName: "GARING", firstName: "LITO", middleName: "" },
+{ id: "7183", lastName: "PATILUNA", firstName: "JUNRY", middleName: "" },
+{ id: "6615", lastName: "JAINO", firstName: "LIMUEL", middleName: "D" },
+{ id: "7206", lastName: "IBARAT", firstName: "DANIEL", middleName: "" },
+{ id: "5937", lastName: "ZAMBOANGNON", firstName: "KENNETH", middleName: "" },
+{ id: "7222", lastName: "STA ANA", firstName: "BRYLL", middleName: "" },
+{ id: "7176", lastName: "ABAD", firstName: "CLETO", middleName: "" },
+{ id: "6704", lastName: "LARGO", firstName: "KENETH", middleName: "" },
+{ id: "7190", lastName: "FABILLAR", firstName: "JESSMARK", middleName: "" }
+
      
 ];
+
+
+// Open the form and show overlay
+document.getElementById("add-employee-btn").addEventListener("click", function() {
+    document.getElementById("overlay").style.display = "flex";
+});
+
+// Close the form
+function closeForm() {
+    document.getElementById("overlay").style.display = "none";
+}
+
+// Function to save a new employee
+function saveEmployee() {
+    let id = document.getElementById("new-id").value.trim();
+    let firstName = document.getElementById("new-first-name").value.trim();
+    let middleName = document.getElementById("new-middle-name").value.trim();
+    let lastName = document.getElementById("new-last-name").value.trim();
+
+    if (id === "" || firstName === "" || lastName === "") {
+        alert("Please fill out all required fields.");
+        return;
+    }
+
+    // Check for duplicate ID
+    if (employees.some(emp => emp.id === id)) {
+        alert("An employee with this ID already exists!");
+        return;
+    }
+
+    let newEmployee = { id, firstName, middleName, lastName };
+    employees.push(newEmployee);  // Ensure it's added to the array
+    localStorage.setItem("employees", JSON.stringify(employees));
+
+    displayEmployees(); // Update the left panel
+    closeForm();
+}
+
+// Function to display employees in the left panel
+function displayEmployees() {
+    const nameList = document.getElementById("name-list");
+    nameList.innerHTML = ""; // Clear existing data
+
+    employees.forEach(item => {
+        const listItem = document.createElement("li");
+        listItem.innerHTML = `<p class="id-number">${item.id}</p><p>${item.firstName} ${item.middleName} ${item.lastName}</p>`;
+        nameList.appendChild(listItem);
+    });
+}
+let employees = JSON.parse(localStorage.getItem("employees")) || [];
+
+// Load employees on page load
+document.addEventListener("DOMContentLoaded", displayEmployees);
 
         const searchInput = document.getElementById("search-bar");
         const resultsContainer = document.getElementById("results");
@@ -597,37 +771,26 @@ button.search:hover .icon {
 
         function search() {
     const query = searchInput.value.toLowerCase().trim();
-    const matchingResults = data.filter(item => {
-        // Search by ID number
+    
+    // Combine both the default data and newly added employees
+    const combinedData = [...data, ...employees]; 
+
+    const matchingResults = combinedData.filter(item => {
         if (item.id.includes(query)) return true;
-        
-        // Search by any combination of names
-        const fullName = `${item.firstName} ${item.middleName} ${item.lastName}`.toLowerCase(); // Full Name
-        const nameShuffle1 = `${item.firstName} ${item.lastName} ${item.middleName}`.toLowerCase(); // First, Last, Middle
-        const nameShuffle2 = `${item.middleName} ${item.firstName} ${item.lastName}`.toLowerCase(); // Middle, First, Last
-        const nameShuffle3 = `${item.middleName} ${item.lastName} ${item.firstName}`.toLowerCase(); // Middle, Last, First
-        
-        if (fullName.includes(query) || nameShuffle1.includes(query) || nameShuffle2.includes(query) || nameShuffle3.includes(query)) {
-            return true;
-        }
-        
-        // Search by firstName and lastName
-        const fullFirstNameLastName = `${item.firstName} ${item.lastName}`.toLowerCase();
-        if (fullFirstNameLastName.includes(query)) return true;
-        
-        // Search by firstName and middleName
-        const fullFirstMiddleName = `${item.firstName} ${item.middleName}`.toLowerCase();
-        if (fullFirstMiddleName.includes(query)) return true;
-        
-        // Search by firstName only
+
+        const fullName = `${item.firstName} ${item.middleName} ${item.lastName}`.toLowerCase();
+        const nameShuffle1 = `${item.firstName} ${item.lastName} ${item.middleName}`.toLowerCase();
+        const nameShuffle2 = `${item.middleName} ${item.firstName} ${item.lastName}`.toLowerCase();
+        const nameShuffle3 = `${item.middleName} ${item.lastName} ${item.firstName}`.toLowerCase();
+
+        if (fullName.includes(query) || nameShuffle1.includes(query) || nameShuffle2.includes(query) || nameShuffle3.includes(query)) return true;
+
+        if (`${item.firstName} ${item.lastName}`.toLowerCase().includes(query)) return true;
+        if (`${item.firstName} ${item.middleName}`.toLowerCase().includes(query)) return true;
         if (item.firstName.toLowerCase().includes(query)) return true;
-        
-        // Search by lastName only
         if (item.lastName.toLowerCase().includes(query)) return true;
-        
-        // Search by middleName only
         if (item.middleName.toLowerCase().includes(query)) return true;
-        
+
         return false;
     });
 
@@ -638,8 +801,6 @@ button.search:hover .icon {
             resultItem.classList.add("result-item");
             resultItem.innerHTML = `<p class="id-number">${result.id}</p><p>${result.firstName} ${result.middleName} ${result.lastName}</p>`;
             resultsContainer.appendChild(resultItem);
-
-            // Save the searched result in the "recent" list
             addRecentSearch(result);
         });
     } else {
