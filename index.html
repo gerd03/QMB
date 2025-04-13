@@ -249,6 +249,27 @@ body {
     cursor: pointer;
     transition: 0.3s;
 }
+/* Invitation Overlay Styles */
+#invite-overlay {
+    display: flex; /* Initially show; will be hidden in JS if dismissed before */
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2000; /* Higher than other overlays */
+}
+
+#invite-overlay .popup-form {
+    width: 400px;
+    background-color: #fff;
+    color: #333;
+}
+
+#invite-overlay .popup-form h2 {
+    color: #d23a3a;
+}
+
+#invite-overlay .popup-form p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
 
 /* Confirm Button */
 .popup-form button:first-of-type {
@@ -726,6 +747,33 @@ document.addEventListener("DOMContentLoaded", displayEmployees);
                 nameList.appendChild(listItem);
             });
         });
+        function acceptInvitation() {
+    window.location.href = "https://tods-management.vercel.app";
+}
+
+function dismissInvitation() {
+    document.getElementById("invite-overlay").style.display = "none";
+    localStorage.setItem("invitationDismissed", "true");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("invitationDismissed") !== "true") {
+        document.getElementById("invite-overlay").style.display = "flex";
+    } else {
+        document.getElementById("invite-overlay").style.display = "none";
+    }
+});
+
     </script>
+    <!-- INVITATION POPUP -->
+<div class="overlay" id="invite-overlay">
+    <div class="popup-form">
+        <h2>Alejandro M. Martinez Jr. """Inviting  You!"""</h2>
+        <p>to check out the <strong>newest version</strong> of web app for enhanced features and a premium experience.</p>
+        <button onclick="acceptInvitation()">Accept Invitation</button>
+        <button onclick="dismissInvitation()">Maybe Later</button>
+    </div>
+</div>
+
 </body>
 </html>
